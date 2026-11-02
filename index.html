@@ -1,1 +1,424 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Guardianes del Agua: una aventura multimedia educativa para descubrir cómo cuidar el agua y proteger los ecosistemas de Colombia."
+  >
+  <meta name="theme-color" content="#071525">
+
+  <title>Guardianes del Agua | Una aventura interactiva</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- Navegación principal -->
+  <header class="site-header" id="inicio">
+    <nav class="navbar container" aria-label="Navegación principal">
+      <a class="brand" href="#contenido" aria-label="Guardianes del Agua, inicio">
+        <span class="brand-symbol" aria-hidden="true"><img class="logo_nav" src="assets/Logo_project.png" alt="Logo Guardianes del agua"></span>
+        <span>GUARDIANES <span class="brand-accent">DEL AGUA</span></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="nav-links"
+        aria-label="Abrir menú"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#aventura">La aventura</a>
+        <a href="#nosotros">Qué somos</a>
+        <a href="#creadores">Creadores</a>
+        <a class="button button-small button-gold" href="#juego">
+          Explorar <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <!-- HERO: portada cinematográfica -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-backdrop" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
+      <div class="hero-content container">
+        <p class="eyebrow reveal">
+          UNA AVENTURA POR LA NATURALEZA COLOMBIANA
+        </p>
+
+        <h1 class="hero-title reveal" id="hero-title">
+          Cada gota cuenta.<br>
+          <span>Tu aventura comienza aquí.</span>
+        </h1>
+
+        <p class="hero-description reveal">
+          Descubre los secretos del agua, toma decisiones y conviértete
+          en un guardián de la vida.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a class="button button-gold button-glow" href="#juego">
+            Descubrir la aventura
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <a class="button button-glass" href="#nosotros">
+            Conoce el proyecto
+          </a>
+        </div>
+
+        <div class="hero-note reveal">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Una experiencia educativa e interactiva</span>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#aventura" aria-label="Desplazarse a la aventura">
+        <span>EXPLORA</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+      </a>
+
+      <div class="hero-coordinate" aria-hidden="true">
+        COLOMBIA · AGUA · VIDA
+      </div>
+    </section>
+
+    <!-- Separador visual -->
+    <div class="section-divider" aria-hidden="true">
+      <span>✦</span>
+    </div>
+
+    <!-- AVENTURA / VIDEO -->
+    <section class="adventure section-pad" id="aventura">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">EL LLAMADO DE LA NATURALEZA</p>
+          <h2>Una misión que <span>vale cada gota</span></h2>
+          <p>
+            Explora paisajes extraordinarios y descubre por qué cuidar
+            el agua es una aventura que nos necesita a todos.
+          </p>
+        </div>
+
+        <div class="cinema-card reveal">
+          <div class="cinema-frame">
+            <!-- Imagen y botón inicial -->
+            <img
+              class="cinema-image"
+              id="cinema-img"
+              src="assets/cascada.jpg"
+              alt="Cascada rodeada de vegetación..."
+              loading="lazy"
+              width="1600"
+              height="900"
+            >
+          
+            <div class="cinema-overlay" id="cinema-overlay">
+              <span class="cinema-tag">DESCUBRE · APRENDE · PROTEGE</span>
+          
+              <button
+                class="play-button"
+                id="video-play"
+                type="button"
+                aria-label="Reproducir presentación audiovisual"
+              >
+                <span class="play-icon" aria-hidden="true">▶</span>
+              </button>
+          
+              <p class="cinema-caption">
+                El futuro del agua también está en tus manos.
+              </p>
+            </div>
+          
+            <!-- Video oculto inicialmente dentro del marco -->
+            <video
+              id="intro-video"
+              class="cinema-video"
+              controls
+              playsinline
+              preload="none"
+              style="display: none; width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 2;"
+            >
+              <source src="assets/video-intro.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video.
+            </video>
+          </div>
+
+          <div class="cinema-footer">
+            <span><span class="mini-star">✦</span> GUARDIANES DEL AGUA</span>
+            <span>EXPERIENCIA MULTIMEDIA</span>
+          </div>
+
+          <!-- El video puede permanecer oculto hasta pulsar reproducir.
+               Si todavía no tienes video-intro.mp4, el botón muestra
+               un aviso y la página sigue funcionando. -->
+          <div class="video-panel" id="video-panel" hidden>
+            <video
+              id="intro-video"
+              controls
+              playsinline
+              preload="none"
+              poster="assets/cascada.jpg"
+            >
+              <source src="assets/video-intro.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video.
+            </video>
+            <p class="video-help">
+              Si no hay un video disponible, puedes continuar explorando
+              la presentación del proyecto.
+            </p>
+          </div>
+        </div>
+
+        <div class="adventure-stats reveal">
+          <div class="stat">
+            <span class="stat-icon" aria-hidden="true">🌿</span>
+            <div>
+              <strong>Explora</strong>
+              <span>La riqueza natural</span>
+            </div>
+          </div>
+
+          <div class="stat">
+            <span class="stat-icon" aria-hidden="true">💧</span>
+            <div>
+              <strong>Aprende</strong>
+              <span>Con cada decisión</span>
+            </div>
+          </div>
+
+          <div class="stat">
+            <span class="stat-icon" aria-hidden="true">✨</span>
+            <div>
+              <strong>Actúa</strong>
+              <span>Desde tu día a día</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUÉ SOMOS -->
+    <section class="about section-pad" id="nosotros">
+      <div class="about-orb about-orb-one" aria-hidden="true"></div>
+      <div class="about-orb about-orb-two" aria-hidden="true"></div>
+
+      <div class="container about-layout">
+        <div class="about-copy reveal">
+          <p class="eyebrow">NUESTRA ESENCIA</p>
+          <h2>Aprender a cuidar<br>también puede ser <span>una aventura.</span></h2>
+
+          <p>
+            <strong>Guardianes del Agua</strong> es una experiencia
+            multimedia educativa diseñada para que niños y niñas
+            descubran la importancia del agua mediante una aventura
+            interactiva.
+          </p>
+
+          <p>
+            A través de personajes, paisajes, decisiones y pequeñas
+            misiones, buscamos promover hábitos responsables y el cuidado
+            de los ecosistemas relacionados con el agua.
+          </p>
+
+          <a class="text-link" href="#creadores">
+            Conoce al equipo creador
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="about-visual reveal">
+          <div class="about-image-frame">
+            <img
+              src="assets/hero-guardianes_2.jpg"
+              alt="Paisaje natural que representa el mundo de Guardianes del Agua"
+              loading="lazy"
+              width="1200"
+              height="1400"
+            >
+
+            <div class="image-label">
+              <span class="image-label-icon" aria-hidden="true">💧</span>
+              <div>
+                <strong>Una misión compartida</strong>
+                <span>Proteger el agua, proteger la vida</span>
+              </div>
+            </div>
+          </div>
+          <span class="orbit orbit-one" aria-hidden="true"></span>
+          <span class="orbit orbit-two" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="container values-grid">
+        <article class="value-card reveal">
+          <span class="value-number">01</span>
+          <span class="value-icon" aria-hidden="true">🌎</span>
+          <h3>Descubrir</h3>
+          <p>Conocer el valor del agua y su relación con la vida.</p>
+        </article>
+
+        <article class="value-card reveal">
+          <span class="value-number">02</span>
+          <span class="value-icon" aria-hidden="true">🧭</span>
+          <h3>Decidir</h3>
+          <p>Explorar situaciones y comprender sus consecuencias.</p>
+        </article>
+
+        <article class="value-card reveal">
+          <span class="value-number">03</span>
+          <span class="value-icon" aria-hidden="true">🌱</span>
+          <h3>Proteger</h3>
+          <p>Transformar lo aprendido en hábitos cotidianos.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CREADORES -->
+    <section class="creators section-pad" id="creadores">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">EL EQUIPO DETRÁS DE LA AVENTURA</p>
+          <h2>Creadores del <span>proyecto</span></h2>
+          <p>
+            Un equipo multidisciplinario que une creatividad, tecnología
+            y educación para dar vida a esta experiencia.
+          </p>
+        </div>
+
+        <div class="creator-grid">
+
+          <article class="creator-card reveal">
+            <div class="creator-avatar avatar-paola" aria-hidden="true"><img class="avatar-image" src="assets/Paola_gomez.png" alt="Imagen perfil Paola Gómez"></div>
+            <span class="creator-label">DIRECCIÓN DE ARTE Y UX/UI</span>
+            <h3>Paola Gómez</h3>
+            <p>
+              Definición del estilo visual, diseño gráfico y estructuración del contenido educativo, garantizando la armonía del proyecto.
+            </p>
+          </article>
+
+          <article class="creator-card reveal">
+            <div class="creator-avatar avatar-daniela" aria-hidden="true"><img class="avatar-image" src="assets/Daniela_guitierrez.png" alt="Imagen perfil Daniela Gutiérrez"></div>
+            <span class="creator-label">ILUSTRACIÓN 2D Y DISEÑO DE PERSONAJES</span>
+            <h3>Daniela Gutiérrez</h3>
+            <p>
+              Creación de personajes, escenarios vectoriales y prototipado visual, aportando en la experiencia narrativa de la interfaz.
+            </p>
+          </article>
+
+          <article class="creator-card reveal">
+            <div class="creator-avatar avatar-sergio" aria-hidden="true"><img class="avatar-image" src="assets/Sergio_martinez.png" alt="Imagen perfil Sergio Martínez"></div>
+            <span class="creator-label">INTERACTIVIDAD</span>
+            <h3>Sergio Martínez</h3>
+            <p>
+              Producción de animaciones, transiciones dinámicas y desarrollo de la lógica interactiva para el sistema de retroalimentación.
+            </p>
+          </article>
+
+          <article class="creator-card reveal">
+            <div class="creator-avatar avatar-jhoan" aria-hidden="true"><img class="avatar-image" src="assets/jhoan.png" alt="Imagen perfil Jhoan Benavides"></div>
+            <span class="creator-label">INTEGRACIÓN Y DESARROLLO MULTIMEDIA</span>
+            <h3>Jhoan Benavides</h3>
+            <p>
+              Construcción de la One Page, integración de componentes
+              y apoyando en la implementación de la experiencia multimedia.
+            </p>
+          </article>
+
+          <article class="creator-card reveal">
+            <div class="creator-avatar avatar-equipo" aria-hidden="true"><img class="avatar-image" src="assets/Nicolas_vargas.png" alt="Imagen perfil Nicolás Vargas"></div>
+            <span class="creator-label">DISEÑO WEB E IDENTIDAD VISUAL</span>
+            <h3>Nicolas Vargas</h3>
+            <p>
+              Maquetación y adecuación de la One Page, junto con la creación de la identidad visual y estética general del proyecto.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LLAMADO FINAL -->
+    <section class="final-cta" id="juego">
+      <div class="cta-glow" aria-hidden="true"></div>
+
+      <div class="container final-cta-content reveal">
+        <span class="cta-drop" aria-hidden="true">💧</span>
+        <p class="eyebrow">EL AGUA NOS NECESITA</p>
+        <h2>¿Aceptas el reto de<br><span>convertirte en guardián?</span></h2>
+        <p>
+          La aventura educativa te espera. Descubre, decide y aprende
+          a cuidar el agua.
+        </p>
+
+        <!-- Cuando el juego esté publicado, cambia el destino en main.js -->
+        <a class="button button-gold button-glow" href="#aventura" id="game-link">
+          Quiero explorar
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <p class="cta-note" id="game-note">
+          La aventura interactiva se abrirá aquí cuando esté integrada.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER INSTITUCIONAL -->
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a class="brand footer-brand footer-fix" href="#contenido" aria-label="Guardianes del Agua, inicio">
+        <span class="brand-symbol" aria-hidden="true"><img class="footer-logo" src="assets/Logo_project.png" alt="Logo Project"></span>
+        <span>GUARDIANES <span class="brand-accent">DEL AGUA</span></span>
+      </a>
+
+      <p class="footer-description">
+        Una experiencia multimedia educativa para promover el cuidado
+        del agua y de los ecosistemas.
+      </p>
+
+      <a class="footer-top-link" href="#contenido">
+        Volver arriba ↑
+      </a>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="unad-lockup">
+        <div class="unad-mark" aria-label="UNAD"><img class="footer-logo" src="assets/Logo_unad.png" alt="Logo Project"></div>
+        <div>
+          <strong>Universidad Nacional Abierta y a Distancia</strong>
+          <span>Proyecto académico multimedia</span>
+        </div>
+      </div>
+
+      <p>
+        © <span id="current-year"></span> Guardianes del Agua.
+        Proyecto académico.
+      </p>
+
+      <a href="#nosotros">Acerca del proyecto</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
+
