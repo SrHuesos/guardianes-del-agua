@@ -197,30 +197,94 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* -------------------------------------------------------
-     Botón hacia el juego independiente
-     ------------------------------------------------------- */
+  /* ==========================================
+  INTEGRACIÓN DEL JUEGO STORYLINE
+  ========================================== */
 
-  const GAME_URL = "";
+  const gameInvitation = document.querySelector("#game-invitation");
+  const gameExperience = document.querySelector("#game-experience");
+  const gameFrame = document.querySelector("#guardianes-game");
+  const gameButton = document.querySelector("#game-link");
+  const gameBack = document.querySelector("#game-back");
+  const fullscreenButton = document.querySelector("#game-fullscreen");
+  const gamePlayer = document.querySelector(".game-player");
 
-  if (gameLink && gameNote) {
-    if (GAME_URL) {
-      gameLink.href = GAME_URL;
-      gameLink.target = "_blank";
-      gameLink.rel = "noopener noreferrer";
-      gameNote.textContent =
-        "La aventura interactiva se abrirá en una nueva pestaña.";
-    } else {
-      gameLink.href = "#aventura";
+  const GAME_PATH = "./Juego/index.html";
 
-      gameLink.addEventListener("click", (event) => {
-        event.preventDefault();
 
-        showToast(
-          "La aventura interactiva se conectará cuando confirmemos la URL del juego."
-        );
+  if (
+    gameInvitation &&
+    gameExperience &&
+    gameFrame &&
+    gameButton
+  ) {
+  
+    let gameLoaded = false;
+  
+    // Abrir la aventura dentro del mismo llamado final.
+    gameButton.addEventListener("click", () => {
+  
+      gameInvitation.hidden = true;
+      gameExperience.hidden = false;
+  
+      if (!gameLoaded) {
+        gameFrame.src = GAME_PATH;
+        gameLoaded = true;
+      }
+  
+      gameExperience.scrollIntoView({
+        behavior: reduceMotion ? "auto" : "smooth",
+        block: "start"
+      });
+  
+    });
+  
+    // Volver a la invitación sin eliminar el juego.
+    if (gameBack) {
+      gameBack.addEventListener("click", () => {
+  
+        gameExperience.hidden = true;
+        gameInvitation.hidden = false;
+  
+        gameInvitation.scrollIntoView({
+          behavior: reduceMotion ? "auto" : "smooth",
+          block: "center"
+        });
+  
       });
     }
+  
+    // Pantalla completa.
+    if (fullscreenButton && gamePlayer) {
+  
+      fullscreenButton.addEventListener("click", async () => {
+  
+        try {
+  
+          if (!document.fullscreenElement) {
+            await gamePlayer.requestFullscreen();
+          } else {
+            await document.exitFullscreen();
+          }
+  
+        } catch (error) {
+          console.error("Error de pantalla completa:", error);
+          showToast("No se pudo activar la pantalla completa.");
+        }
+  
+      });
+  
+      document.addEventListener("fullscreenchange", () => {
+  
+        fullscreenButton.textContent =
+          document.fullscreenElement === gamePlayer
+            ? "✕ Salir de pantalla completa"
+            : "⛶ Pantalla completa";
+  
+      });
+  
+    }
+  
   }
 
   /* -------------------------------------------------------

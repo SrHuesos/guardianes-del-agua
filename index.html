@@ -355,30 +355,113 @@
       </div>
     </section>
 
-    <!-- LLAMADO FINAL -->
-    <section class="final-cta" id="juego">
-      <div class="cta-glow" aria-hidden="true"></div>
+    
+<!-- LLAMADO FINAL + EXPERIENCIA INTERACTIVA -->
+<section class="final-cta" id="juego">
 
-      <div class="container final-cta-content reveal">
-        <span class="cta-drop" aria-hidden="true">💧</span>
-        <p class="eyebrow">EL AGUA NOS NECESITA</p>
-        <h2>¿Aceptas el reto de<br><span>convertirte en guardián?</span></h2>
-        <p>
-          La aventura educativa te espera. Descubre, decide y aprende
-          a cuidar el agua.
-        </p>
+  <div class="cta-glow" aria-hidden="true"></div>
 
-        <!-- Cuando el juego esté publicado, cambia el destino en main.js -->
-        <a class="button button-gold button-glow" href="#aventura" id="game-link">
-          Quiero explorar
-          <span aria-hidden="true">↗</span>
-        </a>
+  <!-- Invitación inicial -->
+  <div class="container final-cta-content reveal" id="game-invitation">
 
-        <p class="cta-note" id="game-note">
-          La aventura interactiva se abrirá aquí cuando esté integrada.
-        </p>
+    <span class="cta-drop" aria-hidden="true">💧</span>
+
+    <p class="eyebrow">EL AGUA NOS NECESITA</p>
+
+    <h2>
+      ¿Aceptas el reto de<br>
+      <span>convertirte en guardián?</span>
+    </h2>
+
+    <p>
+      La aventura educativa te espera. Descubre, decide y aprende
+      a cuidar el agua.
+    </p>
+
+    <button
+      class="button button-gold button-glow"
+      type="button"
+      id="game-link"
+      aria-controls="game-experience">
+      Quiero explorar
+      <span aria-hidden="true">↗</span>
+    </button>
+
+    <p class="cta-note" id="game-note">
+      Tu aventura comienza aquí.
+    </p>
+
+  </div>
+
+  <!-- Juego integrado: aparece al pulsar Quiero explorar -->
+  <div
+    class="container game-experience"
+    id="game-experience"
+    hidden>
+
+    <div class="game-heading">
+
+      <p class="eyebrow">TU MISIÓN COMIENZA AHORA</p>
+
+      <h2>
+        Bienvenido a <span>Guardianes del Agua</span>
+      </h2>
+
+      <p>
+        Explora la aventura, toma decisiones y descubre cómo
+        puedes convertirte en un protector del agua.
+      </p>
+
+    </div>
+
+    <div class="game-player">
+
+      <div class="game-player-bar">
+
+        <div class="game-player-status">
+          <span class="status-dot"></span>
+          EXPERIENCIA INTERACTIVA
+        </div>
+
+        <button
+          type="button"
+          class="game-fullscreen"
+          id="game-fullscreen">
+          ⛶ Pantalla completa
+        </button>
+
       </div>
-    </section>
+
+      <div class="game-frame" id="game-frame">
+
+        <iframe
+          id="guardianes-game"
+          src="about:blank"
+          title="Juego educativo Guardianes del Agua"
+          allow="fullscreen; autoplay"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+      <div class="game-player-footer">
+        <span>💧 Cada decisión cuenta.</span>
+        <span>GUARDIANES DEL AGUA</span>
+      </div>
+
+    </div>
+
+    <button
+      type="button"
+      class="game-back"
+      id="game-back">
+      ← Volver a la invitación
+    </button>
+
+  </div>
+
+</section>
+
 
   </main>
 
