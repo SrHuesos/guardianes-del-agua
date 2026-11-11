@@ -41,7 +41,7 @@
       </button>
 
       <div class="nav-links" id="nav-links">
-        <a href="#aventura">La aventura</a>
+        <a href="#contenido">Inicio</a>
         <a href="#nosotros">Qué somos</a>
         <a href="#creadores">Creadores</a>
         <a class="button button-small button-gold" href="#juego">
@@ -104,8 +104,8 @@
     <div class="section-divider" aria-hidden="true">
       <span>✦</span>
     </div>
-
-    <!-- AVENTURA / VIDEO -->
+//--
+    <!-- AVENTURA / VIDEO 
     <section class="adventure section-pad" id="aventura">
       <div class="container">
         <div class="section-heading reveal">
@@ -119,7 +119,7 @@
 
         <div class="cinema-card reveal">
           <div class="cinema-frame">
-            <!-- Imagen y botón inicial -->
+             Imagen y botón inicial
             <img
               class="cinema-image"
               id="cinema-img"
@@ -147,7 +147,7 @@
               </p>
             </div>
           
-            <!-- Video oculto inicialmente dentro del marco -->
+             Video oculto inicialmente dentro del marco 
             <video
               id="intro-video"
               class="cinema-video"
@@ -166,9 +166,9 @@
             <span>EXPERIENCIA MULTIMEDIA</span>
           </div>
 
-          <!-- El video puede permanecer oculto hasta pulsar reproducir.
+           El video puede permanecer oculto hasta pulsar reproducir.
                Si todavía no tienes video-intro.mp4, el botón muestra
-               un aviso y la página sigue funcionando. -->
+               un aviso y la página sigue funcionando. 
           <div class="video-panel" id="video-panel" hidden>
             <video
               id="intro-video"
@@ -214,8 +214,116 @@
         </div>
       </div>
     </section>
+  -->
+    
 
-    <!-- QUÉ SOMOS -->
+  <!-- LLAMADO FINAL + EXPERIENCIA INTERACTIVA -->
+<section class="final-cta" id="juego">
+
+  <div class="cta-glow" aria-hidden="true"></div>
+
+  <!-- Invitación inicial -->
+  <div class="container final-cta-content reveal" id="game-invitation">
+
+    <span class="cta-drop" aria-hidden="true">💧</span>
+
+    <p class="eyebrow">EL AGUA NOS NECESITA</p>
+
+    <h2>
+      ¿Aceptas el reto de<br>
+      <span>convertirte en guardián?</span>
+    </h2>
+
+    <p>
+      La aventura educativa te espera. Descubre, decide y aprende
+      a cuidar el agua.
+    </p>
+
+    <button
+      class="button button-gold button-glow"
+      type="button"
+      id="game-link"
+      aria-controls="game-experience">
+      Quiero explorar
+      <span aria-hidden="true">↗</span>
+    </button>
+
+    <p class="cta-note" id="game-note">
+      Tu aventura comienza aquí.
+    </p>
+
+  </div>
+
+  <!-- Juego integrado: aparece al pulsar Quiero explorar -->
+  <div
+    class="container game-experience"
+    id="game-experience"
+    hidden>
+
+    <div class="game-heading">
+
+      <p class="eyebrow">TU MISIÓN COMIENZA AHORA</p>
+
+      <h2>
+        Bienvenido a <span>Guardianes del Agua</span>
+      </h2>
+
+      <p>
+        Explora la aventura, toma decisiones y descubre cómo
+        puedes convertirte en un protector del agua.
+      </p>
+
+    </div>
+
+    <div class="game-player">
+
+      <div class="game-player-bar">
+
+        <div class="game-player-status">
+          <span class="status-dot"></span>
+          EXPERIENCIA INTERACTIVA
+        </div>
+
+        <button
+          type="button"
+          class="game-fullscreen"
+          id="game-fullscreen">
+          ⛶ Pantalla completa
+        </button>
+
+      </div>
+
+      <div class="game-frame" id="game-frame">
+
+        <iframe
+          id="guardianes-game"
+          src="about:blank"
+          title="Juego educativo Guardianes del Agua"
+          allow="fullscreen; autoplay"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+      <div class="game-player-footer">
+        <span>💧 Cada decisión cuenta.</span>
+        <span>GUARDIANES DEL AGUA</span>
+      </div>
+
+    </div>
+
+    <button
+      type="button"
+      class="game-back"
+      id="game-back">
+      ← Volver a la invitación
+    </button>
+
+  </div>
+
+</section>
+
+  <!-- QUÉ SOMOS -->
     <section class="about section-pad" id="nosotros">
       <div class="about-orb about-orb-one" aria-hidden="true"></div>
       <div class="about-orb about-orb-two" aria-hidden="true"></div>
@@ -356,111 +464,6 @@
     </section>
 
     
-<!-- LLAMADO FINAL + EXPERIENCIA INTERACTIVA -->
-<section class="final-cta" id="juego">
-
-  <div class="cta-glow" aria-hidden="true"></div>
-
-  <!-- Invitación inicial -->
-  <div class="container final-cta-content reveal" id="game-invitation">
-
-    <span class="cta-drop" aria-hidden="true">💧</span>
-
-    <p class="eyebrow">EL AGUA NOS NECESITA</p>
-
-    <h2>
-      ¿Aceptas el reto de<br>
-      <span>convertirte en guardián?</span>
-    </h2>
-
-    <p>
-      La aventura educativa te espera. Descubre, decide y aprende
-      a cuidar el agua.
-    </p>
-
-    <button
-      class="button button-gold button-glow"
-      type="button"
-      id="game-link"
-      aria-controls="game-experience">
-      Quiero explorar
-      <span aria-hidden="true">↗</span>
-    </button>
-
-    <p class="cta-note" id="game-note">
-      Tu aventura comienza aquí.
-    </p>
-
-  </div>
-
-  <!-- Juego integrado: aparece al pulsar Quiero explorar -->
-  <div
-    class="container game-experience"
-    id="game-experience"
-    hidden>
-
-    <div class="game-heading">
-
-      <p class="eyebrow">TU MISIÓN COMIENZA AHORA</p>
-
-      <h2>
-        Bienvenido a <span>Guardianes del Agua</span>
-      </h2>
-
-      <p>
-        Explora la aventura, toma decisiones y descubre cómo
-        puedes convertirte en un protector del agua.
-      </p>
-
-    </div>
-
-    <div class="game-player">
-
-      <div class="game-player-bar">
-
-        <div class="game-player-status">
-          <span class="status-dot"></span>
-          EXPERIENCIA INTERACTIVA
-        </div>
-
-        <button
-          type="button"
-          class="game-fullscreen"
-          id="game-fullscreen">
-          ⛶ Pantalla completa
-        </button>
-
-      </div>
-
-      <div class="game-frame" id="game-frame">
-
-        <iframe
-          id="guardianes-game"
-          src="about:blank"
-          title="Juego educativo Guardianes del Agua"
-          allow="fullscreen; autoplay"
-          allowfullscreen>
-        </iframe>
-
-      </div>
-
-      <div class="game-player-footer">
-        <span>💧 Cada decisión cuenta.</span>
-        <span>GUARDIANES DEL AGUA</span>
-      </div>
-
-    </div>
-
-    <button
-      type="button"
-      class="game-back"
-      id="game-back">
-      ← Volver a la invitación
-    </button>
-
-  </div>
-
-</section>
 
 
   </main>
